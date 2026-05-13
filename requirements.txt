@@ -2,3 +2,4 @@ dataset-tools
 matplotlib
 Pillow
 tensorflow
+scikit-learn

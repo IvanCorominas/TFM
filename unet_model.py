@@ -18,6 +18,15 @@ def dice_loss(y_true, y_pred):
     """
     return 1 - dice_coefficient(y_true, y_pred)
 
+def bce_dice_loss(y_true, y_pred):
+    """
+    Combinación de Binary Cross-Entropy (BCE) y Dice Loss.
+    BCE estabiliza el entrenamiento desde el inicio evitando que la red
+    colapse prediciendo todo negro o todo blanco, mientras que Dice ajusta los bordes.
+    """
+    bce = tf.keras.losses.BinaryCrossentropy()(y_true, y_pred)
+    return bce + dice_loss(y_true, y_pred)
+
 def build_unet(input_shape=(256, 256, 1)):
     """
     Construye una arquitectura U-Net optimizada para segmentación de imágenes médicas.
