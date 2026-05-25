@@ -3,3 +3,5 @@ matplotlib
 Pillow
 tensorflow
 scikit-learn
+seaborn
+kagglehub
