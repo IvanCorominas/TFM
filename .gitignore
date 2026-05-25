@@ -1,4 +1,5 @@
 data/
 venv/
 *.keras
+*.pkl
 __pycache__/
